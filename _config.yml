@@ -1,7 +1,7 @@
 # Site
-name: "Mediumish"
-title: "Mediumish"
-description: "Jekyll template, Medium styled, free for bloggers."
+name: "Dain's Blog"
+title: "Dain's Blog"
+description: ":)"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
@@ -26,7 +26,7 @@ authors:
     display_name: Dain 
     avatar: 'assets/images/avatar.png'
     gravatar: b1cc14991db7a456fcd761680bbc8f81
-    email: dain0604@gmail.com
+    email: dain0605@gmail.com
     web: https://dain5832.github.io/
     twitter: ''
     description: ":)"
