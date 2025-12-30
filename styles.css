@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-family);
     font-size: 16px;
@@ -24,21 +28,90 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Top Navigation */
+.top-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px 40px;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 80%, rgba(255,255,255,0) 100%);
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.top-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.top-nav a:hover {
+    color: var(--accent-color);
+}
+
+.top-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.top-nav a:hover::after {
+    width: 100%;
+}
+
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 100px 20px 60px 20px;
 }
 
-/* Header */
-header {
-    text-align: center;
+/* Header - Two Column Layout */
+.profile-section {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
     margin-bottom: 60px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     border-bottom: 1px solid var(--border-color);
 }
 
-header h1 {
+.profile-left {
+    flex-shrink: 0;
+}
+
+.profile-right {
+    flex: 1;
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 200px;
+    height: 200px;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-right h1 {
     font-size: 2.5em;
     font-weight: 600;
     margin-bottom: 10px;
@@ -48,13 +121,23 @@ header h1 {
 .tagline {
     font-size: 1.2em;
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-weight: 400;
+}
+
+.about-content {
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: var(--secondary-color);
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
 .contact-info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
@@ -63,12 +146,25 @@ header h1 {
 .contact-info a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: opacity 0.2s;
+    transition: all 0.2s;
+    padding: 6px 12px;
+    border-radius: 4px;
 }
 
 .contact-info a:hover {
-    opacity: 0.7;
-    text-decoration: underline;
+    opacity: 0.8;
+    background-color: rgba(0, 102, 204, 0.05);
+}
+
+.contact-info .cv-link {
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 500;
+}
+
+.contact-info .cv-link:hover {
+    background-color: #0052a3;
+    opacity: 1;
 }
 
 .separator {
@@ -277,10 +373,42 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 40px 20px;
+        padding: 140px 20px 40px 20px;
     }
     
-    header h1 {
+    /* Mobile Navigation */
+    .top-nav {
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        padding: 15px 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav ul {
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .top-nav a {
+        font-size: 0.9em;
+    }
+    
+    /* Profile Section - Stack on mobile */
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .profile-right h1 {
         font-size: 2em;
     }
     
@@ -288,8 +416,13 @@ footer {
         font-size: 1.1em;
     }
     
+    .contact-info {
+        justify-content: center;
+    }
+    
     .experience-header,
-    .education-header {
+    .education-header,
+    .award-header {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -298,18 +431,37 @@ footer {
         margin-top: 5px;
     }
     
-    .skills-container {
+    .skills-container,
+    .research-areas,
+    .background-container {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    header h1 {
+    .top-nav {
+        padding: 10px 15px;
+    }
+    
+    .top-nav ul {
+        gap: 15px;
+    }
+    
+    .top-nav a {
+        font-size: 0.85em;
+    }
+    
+    .profile-right h1 {
         font-size: 1.8em;
     }
     
     section h2 {
         font-size: 1.3em;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
     }
     
     .contact-info {
