@@ -1,61 +1,114 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dain Kim - Applied Scientist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dain Kim</h1>
+            <p class="tagline">Applied Scientist | LLM-based Agents | Cognitive AI</p>
+            <nav class="contact-info">
+                <a href="https://linkedin.com/in/dain5832" target="_blank">LinkedIn</a>
+                <span class="separator">•</span>
+                <a href="https://github.com/dain5832" target="_blank">GitHub</a>
+            </nav>
+        </header>
 
-{% if page.url == "/" %}
+        <main>
+            <section id="about">
+                <h2>About</h2>
+                <p>Applied scientist working on LLM-based agents with a unique interdisciplinary background spanning psychology, recommender systems, and artificial intelligence.</p>
+                <p>Currently focused on Cognitive AI — exploring how psychology and cognitive science can help explain what today's AI systems are actually doing, bridging the gap between human cognition and artificial intelligence.</p>
+            </section>
 
-<!-- Featured
-================================================== -->
-<section class="featured-posts">
-    <div class="section-title">
-        <h2><span>Featured</span></h2>
+            <section id="research-interests">
+                <h2>Research Interests</h2>
+                <div class="research-areas">
+                    <div class="research-item">
+                        <h3>Cognitive AI</h3>
+                        <p>Applying psychological and cognitive science principles to understand and improve AI system behavior and interpretability.</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>LLM-based Agents</h3>
+                        <p>Developing autonomous agents powered by large language models for complex task solving and reasoning.</p>
+                    </div>
+                    <div class="research-item">
+                        <h3>Recommender Systems</h3>
+                        <p>Experience in building personalized recommendation algorithms with a focus on user behavior understanding.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="background">
+                <h2>Background</h2>
+                <div class="background-container">
+                    <div class="background-category">
+                        <h3>Psychology</h3>
+                        <p>Deep understanding of human cognition, behavior, and decision-making processes that inform AI system design.</p>
+                    </div>
+                    <div class="background-category">
+                        <h3>AI & Machine Learning</h3>
+                        <p>Expertise in modern AI techniques, with particular focus on large language models and agent architectures.</p>
+                    </div>
+                    <div class="background-category">
+                        <h3>Recommender Systems</h3>
+                        <p>Practical experience building and optimizing recommendation algorithms at scale.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="current-focus">
+                <h2>Current Focus</h2>
+                <p>Investigating how insights from cognitive science and psychology can enhance our understanding of AI systems, particularly in areas such as:</p>
+                <ul class="focus-list">
+                    <li>Emergent behaviors in large language models</li>
+                    <li>Agent reasoning and decision-making processes</li>
+                    <li>Bridging human and artificial intelligence paradigms</li>
+                    <li>Interpretability through cognitive frameworks</li>
+                </ul>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+                <div class="publication-item">
+                    <h3>Test Time Normalization for Popularity Bias Mitigation</h3>
+                    <p class="publication-details">CIKM 2023</p>
+                    <p>Research on mitigating popularity bias in recommendation systems through test time normalization techniques.</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Item-based Variational Auto-encoder for Fair Music Recommendation</h3>
+                    <p class="publication-details">CIKM 2022 Workshop</p>
+                    <p>Novel approach using variational auto-encoders to ensure fairness in music recommendation systems while maintaining recommendation quality.</p>
+                </div>
+            </section>
+
+            <section id="awards">
+                <h2>Honors & Awards</h2>
+                <div class="award-item">
+                    <div class="award-header">
+                        <h3>Best Paper Award</h3>
+                        <span class="date">October 2022</span>
+                    </div>
+                    <p class="award-details">CIKM EvalRS DataChallenge</p>
+                </div>
+                <div class="award-item">
+                    <div class="award-header">
+                        <h3>2nd Place on Leaderboard</h3>
+                        <span class="date">October 2022</span>
+                    </div>
+                    <p class="award-details">CIKM EvalRS DataChallenge</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Dain Kim. All rights reserved.</p>
+        </footer>
     </div>
-    <div class="row">
-
-    {% for post in site.posts %}
-
-        {% if post.featured == true %}
-
-            {% include featuredbox.html %}
-
-        {% endif %}
-
-    {% endfor %}
-
-    </div>
-</section>
-
-{% endif %}
-
-<!-- Posts Index
-================================================== -->
-<section class="recent-posts">
-
-    <div class="section-title">
-
-        <h2><span>All Stories</span></h2>
-
-    </div>
-
-    <div class="row listrecent">
-
-        {% for post in paginator.posts %}
-
-        {% include postbox.html %}
-
-        {% endfor %}
-
-    </div>
-
-</section>
-
-<!-- Pagination
-================================================== -->
-<div class="bottompagination">
-<div class="pointerup"><i class="fa fa-caret-up"></i></div>
-<span class="navigation" role="navigation">
-    {% include pagination.html %}
-</span>
-</div>
-
+</body>
+</html>
