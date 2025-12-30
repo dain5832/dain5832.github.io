@@ -27,6 +27,15 @@ Alternatively, you can:
 - Use a different filename and update line 35 in `index.html`
 - Host the CV on Google Drive or another service and use the external URL
 
+## Adding Publication Links
+
+To add actual links to your papers:
+
+1. Replace the `#` placeholders in lines 61 and 66 of `index.html` with:
+   - Direct paper URLs (e.g., ACM Digital Library, arXiv)
+   - PDF links hosted on your server
+   - Google Scholar or ResearchGate links
+
 ## Deployment
 
 This site is configured for GitHub Pages. Any push to the main branch will automatically deploy to:
